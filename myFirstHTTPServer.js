@@ -1,6 +1,7 @@
 //Lets require/import the HTTP module
 var http = require('http');
-var dispatcher = require('httpdispatcher');
+var HttpDispatcher = require('httpdispatcher');
+var dispatcher = new HttpDispatcher();
 
 //Lets define a port we want to listen to
 const PORT=8080;
@@ -20,7 +21,7 @@ function handleRequest(request, repsonse){
 }
 
 //For all your static (js/css/images/etc.) set the directory name (relative path).
-dispatcher.setStatic('resources');
+//dispatcher.setStatic('resources');
 
 //A sample GET request
 dispatcher.onGet("/page1", function(req, res) {
